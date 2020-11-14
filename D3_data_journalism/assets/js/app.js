@@ -16,3 +16,13 @@ var charMargin = {
 var chartWidth = svgWidth - charMargin.left - charMargin.right;
 var chartHeight = svgHeight - charMargin.top - charMargin.bottom;
 
+// Select id "scatter", append svg area to it and set dimensions
+var svg = d3.select("#scatter")
+    .append("svg")
+    .attr("height", svgHeight)
+    .attr("width", svgWidth);
+
+
+
+
+
