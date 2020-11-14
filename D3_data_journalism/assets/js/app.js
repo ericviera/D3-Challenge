@@ -24,7 +24,6 @@ var svg = d3.select("#scatter")
 
 // Append a group to the SVG area and shift ('translate') it to the right
 // and down to adhere to the margins set in "chartMargin" object
-
 var chartGroup = svg.append("g")
     .attr("transform",`translate(${chartMargin.left}, ${chartMargin.top})`);
 
@@ -68,10 +67,10 @@ chartGroup.selectAll("circle")
     .enter()
     .append("circle")
     .attr("cx", d => xScale(d.poverty))
-    .attr("cy", d =>  yScale(d.healthcare))
+    .attr("cy", d => yScale(d.healthcare))
     .attr("r", 12)
     .attr("fill", "green");
-    
+
 // Append text within circles
 chartGroup.selectAll("text.text-circles")
     .data(data)
@@ -88,8 +87,8 @@ chartGroup.selectAll("text.text-circles")
 
 // X Axis labels
 chartGroup.append("text")
-    .attr("y", chartHeight + chartMargin.bottom/2)
-    .attr("x", chartWidth / 2)
+    .attr("y", chartHeight+chartMargin.bottom/2)
+    .attr("x", chartWidth/2)
     .attr("dy", "1em")
     .classed("aText", true)
     .text("Poverty");
@@ -98,7 +97,7 @@ chartGroup.append("text")
 chartGroup.append("text")
     .attr("transform", "rotate(-90)")
     .attr("y", 40 - chartMargin.left)
-    .attr("x", 0 - (chartHeight / 2))
+    .attr("x", 0 - (chartHeight/2))
     .attr("dy", "1em")
     .classed("aText", true)
     .text("Healthcare");
